@@ -1,0 +1,40 @@
+/* Quantum Royals - Minimal Luxury System */
+/* Core Feeling: Quiet Power, Private Access, Mystic but Refined */
+
+:root {
+    /* The 5-Color Palette */
+    --color-obsidian-black: #0B0B0F;    /* Foundation: Backgrounds, pages, containers (90%) */
+    --color-deep-royal-purple: #2B0F52; /* Identity: Headers, accents, brand depth */
+    --color-soft-antique-gold: #D4AF37; /* Metal: Primary buttons, icons, dividers, emphasis */
+    --color-champagne-ivory: #F3EBDD;   /* Light: Main text, body, cards, breathing space */
+    --color-electric-teal: #00F0D4;     /* Energy: Focus states, hover glow, active links (sparingly) */
+
+    /* Semantic Aliases */
+    --bg-primary: var(--color-obsidian-black);
+    --bg-secondary: var(--color-deep-royal-purple);
+    --text-primary: var(--color-champagne-ivory);
+    --accent-gold: var(--color-soft-antique-gold);
+    --accent-teal: var(--color-electric-teal);
+
+    /* UI Elements */
+    --border-gold: rgba(212, 175, 55, 0.2);
+    --border-ivory: rgba(243, 235, 221, 0.1);
+    --card-bg: #0B0B0F;
+    
+    /* Typography */
+    --font-headlines: 'Cormorant Garamond', serif;
+    --font-body: 'Montserrat', sans-serif;
+    --font-stats: 'Montserrat', sans-serif; /* Using Montserrat as a clean modern sans */
+
+    /* Effects */
+    --glow-teal: 0 0 15px rgba(0, 240, 212, 0.3);
+    --transition-slow: 600ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Usage Rules:
+   - Black dominates (90%)
+   - Purple supports
+   - Gold is sacred (only CTAs, logos, dividers)
+   - Teal only moves (hover, focus, active)
+   - Ivory keeps everything readable
+*/
