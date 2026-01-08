@@ -1,0 +1,716 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quantum Royals - Brand Guide</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --obsidian-black: #0B0B0F;
+            --deep-royal-purple: #2B0F52;
+            --soft-antique-gold: #D4AF37;
+            --champagne-ivory: #F3EBDD;
+            --electric-teal: #00F0D4;
+            
+            --font-headlines: 'Cormorant Garamond', serif;
+            --font-body: 'Montserrat', sans-serif;
+            
+            --transition-luxury: 600ms cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: var(--font-body);
+            background-color: var(--obsidian-black);
+            color: var(--champagne-ivory);
+            min-height: 100vh;
+            padding: 80px 20px;
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        /* Space Background with Floating Particles */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(ellipse at 20% 50%, rgba(43, 15, 82, 0.1) 0%, transparent 50%),
+                        radial-gradient(ellipse at 80% 80%, rgba(0, 240, 212, 0.05) 0%, transparent 50%);
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Floating Particles */
+        .particle {
+            position: fixed;
+            pointer-events: none;
+            z-index: 0;
+            border-radius: 50%;
+        }
+
+        .particle.small {
+            width: 2px;
+            height: 2px;
+            background: rgba(212, 175, 55, 0.4);
+            box-shadow: 0 0 8px rgba(212, 175, 55, 0.3);
+        }
+
+        .particle.medium {
+            width: 4px;
+            height: 4px;
+            background: rgba(0, 240, 212, 0.3);
+            box-shadow: 0 0 12px rgba(0, 240, 212, 0.2);
+        }
+
+        .particle.large {
+            width: 6px;
+            height: 6px;
+            background: rgba(243, 235, 221, 0.2);
+            box-shadow: 0 0 15px rgba(243, 235, 221, 0.15);
+        }
+
+        @keyframes float-up {
+            0% {
+                transform: translateY(0) translateX(0);
+                opacity: 0;
+            }
+            10% {
+                opacity: 1;
+            }
+            90% {
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-110vh) translateX(var(--drift, 0px));
+                opacity: 0;
+            }
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 100px;
+        }
+
+        .logo-icon {
+            width: 120px;
+            height: 120px;
+            margin: 0 auto 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(212, 175, 55, 0.05);
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            border-radius: 50%;
+            position: relative;
+            transition: var(--transition-luxury);
+        }
+
+        .logo-icon:hover {
+            border-color: var(--electric-teal);
+            box-shadow: 0 0 20px rgba(0, 240, 212, 0.15);
+        }
+
+        .logo-icon svg {
+            width: 70px;
+            height: 70px;
+            stroke: var(--soft-antique-gold);
+            fill: none;
+            stroke-width: 1.5;
+        }
+        
+        h1 {
+            font-family: var(--font-headlines);
+            font-size: 3.5rem;
+            font-weight: 300;
+            color: var(--soft-antique-gold);
+            margin-bottom: 10px;
+            letter-spacing: 8px;
+            text-transform: uppercase;
+        }
+        
+        .subtitle {
+            font-size: 0.9rem;
+            color: var(--champagne-ivory);
+            opacity: 0.6;
+            font-weight: 300;
+            letter-spacing: 5px;
+            text-transform: uppercase;
+        }
+
+        .anchor-line {
+            font-family: var(--font-headlines);
+            font-size: 1.5rem;
+            font-style: italic;
+            margin-top: 40px;
+            color: var(--champagne-ivory);
+            opacity: 0.9;
+        }
+        
+        .section-title {
+            font-family: var(--font-headlines);
+            font-size: 1.8rem;
+            font-weight: 400;
+            color: var(--soft-antique-gold);
+            margin-bottom: 50px;
+            text-align: center;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 40px;
+            height: 1px;
+            background: var(--soft-antique-gold);
+            margin: 20px auto 0;
+            opacity: 0.5;
+        }
+        
+        .palette-section {
+            margin-bottom: 120px;
+        }
+
+        /* Logo Grid */
+        .logo-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 10px;
+            margin-bottom: 10px;
+        }
+        
+        .logo-card {
+            background: var(--obsidian-black);
+            border: 1px solid rgba(243, 235, 221, 0.05);
+            padding: 30px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition-luxury);
+            cursor: pointer;
+        }
+        
+        .logo-card:hover {
+            border-color: rgba(212, 175, 55, 0.3);
+            transform: translateY(-5px);
+        }
+        
+        .logo-card img {
+            max-width: 100%;
+            object-fit: contain;
+            margin-bottom: 10px;
+            filter: brightness(1.1);
+        }
+        
+        .logo-label {
+            font-size: 1.0rem;
+            color: var(--soft-antique-gold);
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            opacity: 0.7;
+        }
+
+        /* Color Grid */
+        .color-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        
+        .color-card {
+            display: flex;
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(243, 235, 221, 0.05);
+            padding: 20px;
+            align-items: center;
+            transition: var(--transition-luxury);
+        }
+
+        .color-card:hover {
+            border-color: rgba(0, 240, 212, 0.2);
+            box-shadow: 0 0 20px rgba(0, 240, 212, 0.05);
+        }
+        
+        .color-swatch {
+            width: 80px;
+            height: 80px;
+            flex-shrink: 0;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .color-info {
+            padding-left: 25px;
+        }
+        
+        .color-name {
+            font-family: var(--font-headlines);
+            font-size: 1.2rem;
+            color: var(--soft-antique-gold);
+            margin-bottom: 5px;
+            letter-spacing: 1px;
+        }
+        
+        .color-hex {
+            font-size: 0.8rem;
+            color: var(--champagne-ivory);
+            opacity: 0.5;
+            font-family: monospace;
+            margin-bottom: 8px;
+        }
+
+        .color-usage {
+            font-size: 0.7rem;
+            color: var(--champagne-ivory);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            opacity: 0.8;
+        }
+
+        /* Rules & Guidelines */
+        .rules-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+
+        .rule-box {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(243, 235, 221, 0.05);
+            padding: 40px;
+        }
+
+        .rule-box h3 {
+            font-family: var(--font-headlines);
+            color: var(--soft-antique-gold);
+            margin-bottom: 20px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .rule-box ul {
+            list-style: none;
+        }
+
+        .rule-box li {
+            margin-bottom: 15px;
+            font-size: 0.9rem;
+            opacity: 0.8;
+            position: relative;
+            padding-left: 20px;
+        }
+
+        .rule-box li::before {
+            content: '•';
+            color: var(--soft-antique-gold);
+            position: absolute;
+            left: 0;
+        }
+
+        .one-line-rule {
+            grid-column: 1 / -1;
+            text-align: center;
+            padding: 60px;
+            border: 1px solid var(--soft-antique-gold);
+            background: rgba(212, 175, 55, 0.02);
+        }
+
+        .one-line-rule blockquote {
+            font-family: var(--font-headlines);
+            font-size: 1.5rem;
+            font-style: italic;
+            color: var(--champagne-ivory);
+        }
+
+        /* UI Preview */
+        .ui-preview {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn-primary, .btn-secondary {
+            padding: 15px 40px;
+            font-family: var(--font-body);
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            cursor: pointer;
+            transition: var(--transition-luxury);
+            border: 1px solid var(--soft-antique-gold);
+        }
+
+        .btn-primary {
+            background: var(--soft-antique-gold);
+            color: var(--obsidian-black);
+        }
+
+        .btn-primary:hover {
+            background: transparent;
+            color: var(--soft-antique-gold);
+            box-shadow: 0 0 20px rgba(212, 175, 55, 0.2);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--soft-antique-gold);
+        }
+
+        .btn-secondary:hover {
+            background: rgba(212, 175, 55, 0.1);
+            box-shadow: 0 0 20px rgba(212, 175, 55, 0.1);
+        }
+
+        footer {
+            text-align: center;
+            padding: 60px 0;
+            border-top: 1px solid rgba(243, 235, 221, 0.05);
+            font-size: 0.7rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            opacity: 0.4;
+        }
+
+        /* Modal / Pop-up Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(11, 11, 15, 0.95);
+            backdrop-filter: blur(10px);
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .modal.active {
+            display: flex;
+            opacity: 1;
+        }
+
+        .modal-content {
+            max-width: 90%;
+            max-height: 90%;
+            object-fit: contain;
+            transform: scale(0.8);
+            transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            box-shadow: 0 0 50px rgba(0, 0, 0, 0.5);
+        }
+
+        .modal.active .modal-content {
+            transform: scale(1);
+        }
+
+        .close-modal {
+            position: absolute;
+            top: 30px;
+            right: 30px;
+            color: var(--soft-antique-gold);
+            font-size: 40px;
+            font-weight: 300;
+            cursor: pointer;
+            line-height: 1;
+            transition: 0.3s;
+        }
+
+        .close-modal:hover {
+            color: var(--electric-teal);
+        }
+
+        /* Mobile Responsiveness */
+        @media (max-width: 768px) {
+            body {
+                padding: 40px 15px;
+            }
+
+            header {
+                margin-bottom: 60px;
+            }
+
+            h1 {
+                font-size: 2rem;
+                letter-spacing: 4px;
+            }
+
+            .subtitle {
+                font-size: 0.7rem;
+                letter-spacing: 3px;
+            }
+
+            .logo-icon {
+                width: 80px;
+                height: 80px;
+            }
+
+            .logo-icon svg {
+                width: 45px;
+                height: 45px;
+            }
+
+            .section-title {
+                font-size: 1.4rem;
+                margin-bottom: 30px;
+            }
+
+            .palette-section {
+                margin-bottom: 80px;
+            }
+
+            .color-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .rules-container {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .rule-box {
+                padding: 25px;
+            }
+
+            .one-line-rule {
+                padding: 40px 20px;
+            }
+
+            .one-line-rule blockquote {
+                font-size: 1.1rem;
+            }
+
+            .logo-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .logo-card {
+                padding: 15px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .logo-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .btn-primary, .btn-secondary {
+                width: 100%;
+                padding: 12px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <p class="subtitle">Visual Identity & Brand Standards</p>
+            <h1>Quantum Royals</h1>
+            
+            <p class="anchor-line">"The future belongs to those who master their quiet power."</p>
+        </header>
+
+        <!-- Color Palette -->
+        <section class="palette-section">
+            <h2 class="section-title">Core Palette</h2>
+            <div class="color-grid">
+                <div class="color-card">
+                    <div class="color-swatch" style="background: #0B0B0F;"></div>
+                    <div class="color-info">
+                        <div class="color-name">Obsidian Black</div>
+                        <div class="color-hex">#0B0B0F</div>
+                        <div class="color-usage">Primary Background</div>
+                    </div>
+                </div>
+                <div class="color-card">
+                    <div class="color-swatch" style="background: #D4AF37;"></div>
+                    <div class="color-info">
+                        <div class="color-name">Antique Gold</div>
+                        <div class="color-hex">#D4AF37</div>
+                        <div class="color-usage">Primary Accent</div>
+                    </div>
+                </div>
+                <div class="color-card">
+                    <div class="color-swatch" style="background: #2B0F52;"></div>
+                    <div class="color-info">
+                        <div class="color-name">Royal Purple</div>
+                        <div class="color-hex">#2B0F52</div>
+                        <div class="color-usage">Secondary Accent</div>
+                    </div>
+                </div>
+                <div class="color-card">
+                    <div class="color-swatch" style="background: #00F0D4;"></div>
+                    <div class="color-info">
+                        <div class="color-name">Electric Teal</div>
+                        <div class="color-hex">#00F0D4</div>
+                        <div class="color-usage">Interactive Elements</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Guidelines -->
+        <section class="palette-section">
+            <h2 class="section-title">Brand Guidelines</h2>
+            <div class="rules-container">
+                <div class="rule-box">
+                    <h3>Typography</h3>
+                    <ul>
+                        <li>Headlines: Cormorant Garamond (Light/Regular)</li>
+                        <li>Body: Montserrat (Light/Regular)</li>
+                        <li>Always use wide letter-spacing for headers</li>
+                    </ul>
+                </div>
+                <div class="rule-box">
+                    <h3>Visual Style</h3>
+                    <ul>
+                        <li>Maintain high contrast ratios</li>
+                        <li>Use subtle gradients for depth</li>
+                        <li>Incorporate floating particles for atmosphere</li>
+                    </ul>
+                </div>
+                <div class="one-line-rule">
+                    <blockquote>"If it's not black, it's an accent — not a background."</blockquote>
+                </div>
+            </div>
+        </section>
+
+         <!-- Logo Options -->
+        <section class="palette-section">
+            <h2 class="section-title">Logo Options</h2>
+            <div class="logo-grid">
+                <div class="logo-card">
+                    <img src="QR-1.png" alt="Logo 1">
+                    <span class="logo-label">#1</span>
+                </div>
+                <div class="logo-card">
+                    <img src="QR-2.png" alt="Logo 2">
+                    <span class="logo-label">#2</span>
+                </div>
+                <div class="logo-card">
+                    <img src="QR-3.png" alt="Logo 3">
+                    <span class="logo-label">#3</span>
+                </div>
+                <div class="logo-card">
+                    <img src="QR-4.png" alt="Logo 4">
+                    <span class="logo-label">#4</span>
+                </div>
+            </div>
+            <div class="logo-grid">
+                <div class="logo-card">
+                    <img src="QR-5.png" alt="Logo 5">
+                    <span class="logo-label">#5</span>
+                </div>
+                <div class="logo-card">
+                    <img src="QR-6.png" alt="Logo 6">
+                    <span class="logo-label">#6</span>
+                </div>
+                <div class="logo-card">
+                    <img src="QR-7.png" alt="Logo 7">
+                    <span class="logo-label">#7</span>
+                </div>
+                <div class="logo-card">
+                    <img src="QR-8.png" alt="Logo 8">
+                    <span class="logo-label">#8</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- UI Preview -->
+        <section class="palette-section">
+            <h2 class="section-title">Interactive Buttons</h2>
+            <div class="ui-preview">
+                <button class="btn-primary">Primary Button</button>
+                <button class="btn-secondary">Secondary Button</button>
+            </div>
+        </section>
+
+        <footer>
+            <p>Quantum Royals &bull; Private Access &bull; Quiet Power</p>
+        </footer>
+    </div>
+
+    <!-- Modal for Logo Pop-up -->
+    <div id="logoModal" class="modal">
+        <span class="close-modal">&times;</span>
+        <img class="modal-content" id="modalImg">
+    </div>
+
+    <script>
+        // Create floating particles for space effect
+        function createParticles() {
+            const particleCount = 40;
+            const particleTypes = ['small', 'medium', 'large'];
+            
+            for (let i = 0; i < particleCount; i++) {
+                const particle = document.createElement('div');
+                particle.className = `particle ${particleTypes[Math.floor(Math.random() * particleTypes.length)]}`;
+                
+                const startX = Math.random() * window.innerWidth;
+                // Distribute particles across the entire height of the screen initially
+                const startY = Math.random() * window.innerHeight;
+                const drift = (Math.random() - 0.5) * 200;
+                const duration = 8 + Math.random() * 10;
+                // Negative delay allows particles to start mid-animation
+                const delay = -(Math.random() * duration);
+                
+                particle.style.left = startX + 'px';
+                particle.style.top = '100vh'; // Start from bottom for the animation cycle
+                particle.style.setProperty('--drift', drift + 'px');
+                particle.style.animation = `float-up ${duration}s linear ${delay}s infinite`;
+                
+                document.body.appendChild(particle);
+            }
+        }
+        
+        createParticles();
+
+        // Logo Pop-up Functionality
+        const modal = document.getElementById("logoModal");
+        const modalImg = document.getElementById("modalImg");
+        const closeBtn = document.getElementsByClassName("close-modal")[0];
+        const logoCards = document.querySelectorAll(".logo-card");
+
+        logoCards.forEach(card => {
+            card.addEventListener("click", function() {
+                const img = this.querySelector("img");
+                modal.classList.add("active");
+                modalImg.src = img.src;
+            });
+        });
+
+        closeBtn.onclick = function() {
+            modal.classList.remove("active");
+        }
+
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.classList.remove("active");
+            }
+        }
+    </script>
+</body>
+</html>
