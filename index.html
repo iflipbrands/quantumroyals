@@ -52,7 +52,7 @@
         }
 
         .container {
-            max-width: 1000px;
+            max-width: 1100px;
             margin: 0 auto;
             position: relative;
             z-index: 1;
@@ -109,40 +109,23 @@
             margin-bottom: 100px;
         }
 
-        .logo-icon {
-            width: 120px;
-            height: 120px;
-            margin: 0 auto 30px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: rgba(212, 175, 55, 0.05);
-            border: 1px solid rgba(212, 175, 55, 0.2);
-            border-radius: 50%;
-            position: relative;
-            transition: var(--transition-luxury);
-        }
-
-        .logo-icon:hover {
-            border-color: var(--electric-teal);
-            box-shadow: 0 0 20px rgba(0, 240, 212, 0.15);
-        }
-
-        .logo-icon svg {
-            width: 70px;
-            height: 70px;
-            stroke: var(--soft-antique-gold);
-            fill: none;
-            stroke-width: 1.5;
-        }
-        
         h1 {
             font-family: var(--font-headlines);
-            font-size: 3.5rem;
+            font-size: 4rem;
             font-weight: 300;
             color: var(--soft-antique-gold);
             margin-bottom: 10px;
-            letter-spacing: 8px;
+            letter-spacing: 12px;
+            text-transform: uppercase;
+        }
+
+         h2 {
+            font-family: var(--font-headlines);
+            font-size: 1.5rem;
+            font-weight: 300;
+            color: var(--soft-antique-gold);
+            margin-bottom: 10px;
+            letter-spacing: 6px;
             text-transform: uppercase;
         }
         
@@ -153,11 +136,12 @@
             font-weight: 300;
             letter-spacing: 5px;
             text-transform: uppercase;
+            margin-bottom: 20px;
         }
 
         .anchor-line {
             font-family: var(--font-headlines);
-            font-size: 1.5rem;
+            font-size: 1.6rem;
             font-style: italic;
             margin-top: 40px;
             color: var(--champagne-ivory);
@@ -166,12 +150,12 @@
         
         .section-title {
             font-family: var(--font-headlines);
-            font-size: 1.8rem;
+            font-size: 2rem;
             font-weight: 400;
             color: var(--soft-antique-gold);
-            margin-bottom: 50px;
+            margin-bottom: 60px;
             text-align: center;
-            letter-spacing: 3px;
+            letter-spacing: 4px;
             text-transform: uppercase;
             position: relative;
         }
@@ -179,111 +163,121 @@
         .section-title::after {
             content: '';
             display: block;
-            width: 40px;
+            width: 60px;
             height: 1px;
             background: var(--soft-antique-gold);
-            margin: 20px auto 0;
+            margin: 25px auto 0;
             opacity: 0.5;
         }
         
         .palette-section {
-            margin-bottom: 120px;
+            margin-bottom: 140px;
         }
 
-        /* Logo Grid */
-        .logo-grid {
+        /* Featured Logo Section */
+        .featured-logo-container {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 10px;
-            margin-bottom: 10px;
-        }
-        
-        .logo-card {
-            background: var(--obsidian-black);
-            border: 1px solid rgba(243, 235, 221, 0.05);
-            padding: 30px;
-            display: flex;
-            flex-direction: column;
+            grid-template-columns: 1fr 1.2fr;
+            gap: 80px;
             align-items: center;
+        }
+
+        .featured-logo-visual {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(243, 235, 221, 0.08);
+            padding: 60px;
+            display: flex;
             justify-content: center;
+            align-items: center;
+            position: relative;
             transition: var(--transition-luxury);
-            cursor: pointer;
         }
-        
-        .logo-card:hover {
-            border-color: rgba(212, 175, 55, 0.3);
-            transform: translateY(-5px);
+
+        .featured-logo-visual:hover {
+            border-color: var(--soft-antique-gold);
+            box-shadow: 0 0 40px rgba(212, 175, 55, 0.1);
         }
-        
-        .logo-card img {
+
+        .featured-logo-visual img {
             max-width: 100%;
-            object-fit: contain;
-            margin-bottom: 10px;
-            filter: brightness(1.1);
+            height: auto;
+            filter: drop-shadow(0 0 20px rgba(212, 175, 55, 0.2));
         }
-        
-        .logo-label {
-            font-size: 1.0rem;
+
+        .featured-logo-content h3 {
+            font-family: var(--font-headlines);
+            font-size: 2.2rem;
             color: var(--soft-antique-gold);
+            margin-bottom: 30px;
             letter-spacing: 2px;
             text-transform: uppercase;
-            opacity: 0.7;
+            font-weight: 400;
+        }
+
+        .featured-logo-content p {
+            margin-bottom: 25px;
+            font-size: 1.05rem;
+            line-height: 1.8;
+            opacity: 0.85;
+            font-weight: 300;
         }
 
         /* Color Grid */
         .color-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 25px;
         }
         
         .color-card {
             display: flex;
+            flex-direction: column;
             background: rgba(255, 255, 255, 0.02);
             border: 1px solid rgba(243, 235, 221, 0.05);
-            padding: 20px;
-            align-items: center;
+            padding: 25px;
             transition: var(--transition-luxury);
         }
 
         .color-card:hover {
             border-color: rgba(0, 240, 212, 0.2);
-            box-shadow: 0 0 20px rgba(0, 240, 212, 0.05);
+            transform: translateY(-5px);
         }
         
         .color-swatch {
-            width: 80px;
-            height: 80px;
-            flex-shrink: 0;
+            width: 100%;
+            height: 120px;
+            margin-bottom: 20px;
             border: 1px solid rgba(255, 255, 255, 0.1);
         }
         
         .color-info {
-            padding-left: 25px;
+            text-align: left;
         }
         
         .color-name {
             font-family: var(--font-headlines);
-            font-size: 1.2rem;
+            font-size: 1.3rem;
             color: var(--soft-antique-gold);
-            margin-bottom: 5px;
+            margin-bottom: 8px;
             letter-spacing: 1px;
         }
         
         .color-hex {
-            font-size: 0.8rem;
+            font-size: 0.9rem;
             color: var(--champagne-ivory);
-            opacity: 0.5;
+            opacity: 0.6;
             font-family: monospace;
-            margin-bottom: 8px;
+            margin-bottom: 12px;
         }
 
         .color-usage {
-            font-size: 0.7rem;
+            font-size: 0.75rem;
             color: var(--champagne-ivory);
             text-transform: uppercase;
             letter-spacing: 1px;
             opacity: 0.8;
+            border-top: 1px solid rgba(243, 235, 221, 0.1);
+            padding-top: 12px;
         }
 
         /* Rules & Guidelines */
@@ -302,9 +296,10 @@
         .rule-box h3 {
             font-family: var(--font-headlines);
             color: var(--soft-antique-gold);
-            margin-bottom: 20px;
+            margin-bottom: 25px;
             letter-spacing: 2px;
             text-transform: uppercase;
+            font-weight: 400;
         }
 
         .rule-box ul {
@@ -312,11 +307,12 @@
         }
 
         .rule-box li {
-            margin-bottom: 15px;
-            font-size: 0.9rem;
+            margin-bottom: 18px;
+            font-size: 0.95rem;
             opacity: 0.8;
             position: relative;
-            padding-left: 20px;
+            padding-left: 25px;
+            font-weight: 300;
         }
 
         .rule-box li::before {
@@ -329,197 +325,101 @@
         .one-line-rule {
             grid-column: 1 / -1;
             text-align: center;
-            padding: 60px;
-            border: 1px solid var(--soft-antique-gold);
-            background: rgba(212, 175, 55, 0.02);
+            padding: 80px 40px;
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            background: rgba(212, 175, 55, 0.03);
+            margin-top: 20px;
         }
 
         .one-line-rule blockquote {
             font-family: var(--font-headlines);
-            font-size: 1.5rem;
+            font-size: 1.8rem;
             font-style: italic;
             color: var(--champagne-ivory);
+            font-weight: 300;
         }
 
         /* UI Preview */
         .ui-preview {
             display: flex;
-            gap: 20px;
+            gap: 30px;
             justify-content: center;
             flex-wrap: wrap;
         }
 
         .btn-primary, .btn-secondary {
-            padding: 15px 40px;
+            padding: 18px 45px;
             font-family: var(--font-body);
-            font-size: 0.8rem;
             text-transform: uppercase;
             letter-spacing: 3px;
+            font-size: 0.85rem;
             cursor: pointer;
             transition: var(--transition-luxury);
-            border: 1px solid var(--soft-antique-gold);
+            border: 1px solid transparent;
         }
 
         .btn-primary {
-            background: var(--soft-antique-gold);
-            color: var(--obsidian-black);
+            background: transparent;
+            color: var(--soft-antique-gold);
+            border-color: var(--soft-antique-gold);
+            box-shadow: 0 0 25px rgba(212, 175, 55, 0.2);
         }
 
         .btn-primary:hover {
             background: transparent;
-            color: var(--soft-antique-gold);
-            box-shadow: 0 0 20px rgba(212, 175, 55, 0.2);
+            color: var(--electric-teal);
+            border-color: var(--electric-teal);
+            box-shadow: 0 0 25px rgba(212, 175, 55, 0.2);
         }
 
         .btn-secondary {
-            background: transparent;
-            color: var(--soft-antique-gold);
+            background: var(--soft-antique-gold);
+            color: var(--obsidian-black);
+            border-color: var(--soft-antique-gold);
         }
 
         .btn-secondary:hover {
-            background: rgba(212, 175, 55, 0.1);
-            box-shadow: 0 0 20px rgba(212, 175, 55, 0.1);
+            background: var(--electric-teal);
+            border-color: var(--electric-teal);
+            color: var(--obsidian-black);
+            box-shadow: 0 0 25px rgba(0, 240, 212, 0.15);
         }
 
         footer {
             text-align: center;
-            padding: 60px 0;
+            margin-top: 100px;
+            padding-top: 40px;
             border-top: 1px solid rgba(243, 235, 221, 0.05);
-            font-size: 0.7rem;
+            opacity: 0.5;
+            font-size: 0.8rem;
             letter-spacing: 3px;
             text-transform: uppercase;
-            opacity: 0.4;
         }
 
-        /* Modal / Pop-up Styles */
-        .modal {
-            display: none;
-            position: fixed;
-            z-index: 1000;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(11, 11, 15, 0.95);
-            backdrop-filter: blur(10px);
-            justify-content: center;
-            align-items: center;
-            opacity: 0;
-            transition: opacity 0.3s ease;
-        }
-
-        .modal.active {
-            display: flex;
-            opacity: 1;
-        }
-
-        .modal-content {
-            max-width: 90%;
-            max-height: 90%;
-            object-fit: contain;
-            transform: scale(0.8);
-            transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            border: 1px solid rgba(212, 175, 55, 0.2);
-            box-shadow: 0 0 50px rgba(0, 0, 0, 0.5);
-        }
-
-        .modal.active .modal-content {
-            transform: scale(1);
-        }
-
-        .close-modal {
-            position: absolute;
-            top: 30px;
-            right: 30px;
-            color: var(--soft-antique-gold);
-            font-size: 40px;
-            font-weight: 300;
-            cursor: pointer;
-            line-height: 1;
-            transition: 0.3s;
-        }
-
-        .close-modal:hover {
-            color: var(--electric-teal);
-        }
-
-        /* Mobile Responsiveness */
-        @media (max-width: 768px) {
-            body {
-                padding: 40px 15px;
+        /* Responsive Adjustments */
+        @media (max-width: 900px) {
+            .featured-logo-container {
+                grid-template-columns: 1fr;
+                gap: 50px;
             }
-
-            header {
-                margin-bottom: 60px;
+            
+            .featured-logo-visual {
+                padding: 40px;
             }
 
             h1 {
-                font-size: 2rem;
-                letter-spacing: 4px;
-            }
-
-            .subtitle {
-                font-size: 0.7rem;
-                letter-spacing: 3px;
-            }
-
-            .logo-icon {
-                width: 80px;
-                height: 80px;
-            }
-
-            .logo-icon svg {
-                width: 45px;
-                height: 45px;
-            }
-
-            .section-title {
-                font-size: 1.4rem;
-                margin-bottom: 30px;
-            }
-
-            .palette-section {
-                margin-bottom: 80px;
-            }
-
-            .color-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .rules-container {
-                grid-template-columns: 1fr;
-                gap: 20px;
-            }
-
-            .rule-box {
-                padding: 25px;
-            }
-
-            .one-line-rule {
-                padding: 40px 20px;
-            }
-
-            .one-line-rule blockquote {
-                font-size: 1.1rem;
-            }
-
-            .logo-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .logo-card {
-                padding: 15px;
+                font-size: 2.8rem;
+                letter-spacing: 8px;
             }
         }
 
-        @media (max-width: 480px) {
-            .logo-grid {
+        @media (max-width: 768px) {
+            .rules-container {
                 grid-template-columns: 1fr;
             }
             
-            .btn-primary, .btn-secondary {
-                width: 100%;
-                padding: 12px 20px;
+            .section-title {
+                font-size: 1.6rem;
             }
         }
     </style>
@@ -529,9 +429,26 @@
         <header>
             <p class="subtitle">Visual Identity & Brand Standards</p>
             <h1>Quantum Royals</h1>
-            
             <p class="anchor-line">"The future belongs to those who master their quiet power."</p>
         </header>
+
+        <!-- Featured Logo Section -->
+        <section class="palette-section">
+            
+            <div class="featured-logo-container">
+                <div class="featured-logo-visual">
+                    <img src="QR-5.png" alt="Quantum Royals Logo Mark">
+                </div>
+                
+                <div class="featured-logo-content">
+                    <h2>Logo Identity</h2>
+                    <p>
+                     The Quantum Royals logo features a visual architecture that precisely symbolizes its brand identity. Intersecting orbits represent the vast, multidimensional space of quantum mechanics, conveying constant motion and infinite possibility. The central 'Q' serves as the anchor, signifying the brand's pivotal role within this advanced scientific realm.
+                    </p>
+                    <p>Crowning the design is a minimalist coronet, which completes the 'Quiet Power' narrative by representing royalty and prestige. This element balances the technical complexity of quantum theory with the timeless elegance of a royal heritage, reflecting the brand's commitment to excellence and exclusivity.</p>
+                </div>
+            </div>
+        </section>
 
         <!-- Color Palette -->
         <section class="palette-section">
@@ -598,50 +515,9 @@
             </div>
         </section>
 
-         <!-- Logo Options -->
-        <section class="palette-section">
-            <h2 class="section-title">Logo Options</h2>
-            <div class="logo-grid">
-                <div class="logo-card">
-                    <img src="QR-1.png" alt="Logo 1">
-                    <span class="logo-label">#1</span>
-                </div>
-                <div class="logo-card">
-                    <img src="QR-2.png" alt="Logo 2">
-                    <span class="logo-label">#2</span>
-                </div>
-                <div class="logo-card">
-                    <img src="QR-3.png" alt="Logo 3">
-                    <span class="logo-label">#3</span>
-                </div>
-                <div class="logo-card">
-                    <img src="QR-4.png" alt="Logo 4">
-                    <span class="logo-label">#4</span>
-                </div>
-            </div>
-            <div class="logo-grid">
-                <div class="logo-card">
-                    <img src="QR-5.png" alt="Logo 5">
-                    <span class="logo-label">#5</span>
-                </div>
-                <div class="logo-card">
-                    <img src="QR-6.png" alt="Logo 6">
-                    <span class="logo-label">#6</span>
-                </div>
-                <div class="logo-card">
-                    <img src="QR-7.png" alt="Logo 7">
-                    <span class="logo-label">#7</span>
-                </div>
-                <div class="logo-card">
-                    <img src="QR-8.png" alt="Logo 8">
-                    <span class="logo-label">#8</span>
-                </div>
-            </div>
-        </section>
-
         <!-- UI Preview -->
         <section class="palette-section">
-            <h2 class="section-title">Interactive Buttons</h2>
+            <h2 class="section-title">Interactive Elements</h2>
             <div class="ui-preview">
                 <button class="btn-primary">Primary Button</button>
                 <button class="btn-secondary">Secondary Button</button>
@@ -649,14 +525,9 @@
         </section>
 
         <footer>
+            <p><b>Designed by iFlipbrands.com</b></p>
             <p>Quantum Royals &bull; Private Access &bull; Quiet Power</p>
         </footer>
-    </div>
-
-    <!-- Modal for Logo Pop-up -->
-    <div id="logoModal" class="modal">
-        <span class="close-modal">&times;</span>
-        <img class="modal-content" id="modalImg">
     </div>
 
     <script>
@@ -670,15 +541,13 @@
                 particle.className = `particle ${particleTypes[Math.floor(Math.random() * particleTypes.length)]}`;
                 
                 const startX = Math.random() * window.innerWidth;
-                // Distribute particles across the entire height of the screen initially
                 const startY = Math.random() * window.innerHeight;
                 const drift = (Math.random() - 0.5) * 200;
                 const duration = 8 + Math.random() * 10;
-                // Negative delay allows particles to start mid-animation
                 const delay = -(Math.random() * duration);
                 
                 particle.style.left = startX + 'px';
-                particle.style.top = '100vh'; // Start from bottom for the animation cycle
+                particle.style.top = '100vh';
                 particle.style.setProperty('--drift', drift + 'px');
                 particle.style.animation = `float-up ${duration}s linear ${delay}s infinite`;
                 
@@ -687,30 +556,6 @@
         }
         
         createParticles();
-
-        // Logo Pop-up Functionality
-        const modal = document.getElementById("logoModal");
-        const modalImg = document.getElementById("modalImg");
-        const closeBtn = document.getElementsByClassName("close-modal")[0];
-        const logoCards = document.querySelectorAll(".logo-card");
-
-        logoCards.forEach(card => {
-            card.addEventListener("click", function() {
-                const img = this.querySelector("img");
-                modal.classList.add("active");
-                modalImg.src = img.src;
-            });
-        });
-
-        closeBtn.onclick = function() {
-            modal.classList.remove("active");
-        }
-
-        window.onclick = function(event) {
-            if (event.target == modal) {
-                modal.classList.remove("active");
-            }
-        }
     </script>
 </body>
 </html>
